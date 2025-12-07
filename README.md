@@ -1,5 +1,8 @@
 ## Saga with Temporal in Go
-[Temporal](https://temporal.io/)-orchestrated Saga across three Go microservices with a layout that is *close to production*: separate processes, persistence, HTTP APIs, worker, and tests.
+[Temporal](https://temporal.io/)-orchestrated Saga across three Go microservices with a layout that is *close to production*: separate processes, persistence, HTTP APIs, worker, and tests. 
+
+### Minimalistic stack
+`pgx` for Postgres, `goose` for migrations, otherwise standard library + Temporal SDK. No extra frameworks to keep focus on saga flow and avoid distractions.
 
 ### Services
 - `services/order`: Create order and launche the saga workflow, PostgreSQL persistence, and the Temporal workflow/worker (`internal/infrastructure/workflow/temporal_process_order.go`, worker entry `cmd/temporal_worker/main.go`).
