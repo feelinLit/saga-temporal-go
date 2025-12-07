@@ -1,0 +1,17 @@
+### Launch order create process
+POST http://localhost:8070/order
+Content-Type: application/json
+Accept: application/json
+
+{
+  "item_id": 123,
+  "item_count": 2,
+  "client_id": 3,
+  "total_price": 456
+}
+
+### Get order status
+@order_id = 5
+GET http://localhost:8070/order/{{order_id}}/status
+Accept: application/json
+
